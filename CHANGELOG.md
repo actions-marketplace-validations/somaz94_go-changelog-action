@@ -2,7 +2,72 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased (2026-04-14)
+## [v1.1.0](https://github.com/somaz94/go-changelog-action/compare/v1.0.10...v1.1.0) (2026-08-07)
+
+### Performance Improvements
+
+- ship a prebuilt multi-arch image instead of building per run ([d19f85c](https://github.com/somaz94/go-changelog-action/commit/d19f85cc789ae2aadc571b2f039fa2da2305483c))
+
+### Continuous Integration
+
+- add a golangci-lint config scoped to defect-finding linters ([4c6f375](https://github.com/somaz94/go-changelog-action/commit/4c6f37529b6e96f4df421be88942e83c62a8a018))
+
+### Contributors
+
+- somaz
+
+<br/>
+
+## [v1.0.10](https://github.com/somaz94/go-changelog-action/compare/v1.0.9...v1.0.10) (2026-07-21)
+
+### Code Refactoring
+
+- hoist buildEntry invariant args into entryBuilder context struct ([5749bad](https://github.com/somaz94/go-changelog-action/commit/5749bad188b14a5ffcb27332b30fd47cbc6d8971))
+
+### Contributors
+
+- somaz
+
+<br/>
+
+## [v1.0.9](https://github.com/somaz94/go-changelog-action/compare/v1.0.8...v1.0.9) (2026-07-21)
+
+### Code Refactoring
+
+- propagate context to the git safe.directory command ([536ac6c](https://github.com/somaz94/go-changelog-action/commit/536ac6ccc50efedb324babdea6a63390c9ba790f))
+
+### Tests
+
+- isolate global git config in tests to stop ~/.gitconfig pollution ([8071ebf](https://github.com/somaz94/go-changelog-action/commit/8071ebfc607420771083ac8e3994b183bc65149d))
+
+### Builds
+
+- **deps:** bump actions/checkout from 6 to 7 (#6) ([#6](https://github.com/somaz94/go-changelog-action/pull/6)) ([85e90c1](https://github.com/somaz94/go-changelog-action/commit/85e90c1a52c256f6489bbda2932cb134cb3c2c18))
+- **deps:** bump alpine from 3.23 to 3.24 in the docker-minor group (#5) ([#5](https://github.com/somaz94/go-changelog-action/pull/5)) ([ec5f0eb](https://github.com/somaz94/go-changelog-action/commit/ec5f0eba8e67b8ff70becd52e545f41e07eb8106))
+
+### Continuous Integration
+
+- remove DCO workflow ([45ee5c5](https://github.com/somaz94/go-changelog-action/commit/45ee5c50c86bd88a374cc857045d220f197515b6))
+- adopt semantic-pr, labels, lock-threads, PR size, and auto-assign reusables ([b405a1a](https://github.com/somaz94/go-changelog-action/commit/b405a1a4e92bc53e312dfe79c6296ef06bbd1baf))
+- use reusable stale-issues workflow ([5002bcf](https://github.com/somaz94/go-changelog-action/commit/5002bcf8aa290acae12a6670e6d705bf800470a9))
+- use reusable issue-greeting workflow ([22cc5cd](https://github.com/somaz94/go-changelog-action/commit/22cc5cdb057c153ecc8e9369a18e217e9e15b897))
+- use reusable dependabot-auto-merge workflow ([a7ba28d](https://github.com/somaz94/go-changelog-action/commit/a7ba28d1fdc6e376eb05b84e97af0093988e80fa))
+- use reusable contributors workflow ([9457767](https://github.com/somaz94/go-changelog-action/commit/94577670b80df5a0a5fa8bf26de0210507ff495b))
+- add ok-to-test workflow stub ([06cc11e](https://github.com/somaz94/go-changelog-action/commit/06cc11e1a9ceb4c0b90c1e457030a6bd3b2e3ad3))
+- add PR welcome workflow stub ([e05c1b1](https://github.com/somaz94/go-changelog-action/commit/e05c1b1b1ccce86332ce7f5db5ca3c8de49c0ea0))
+- add DCO check via shared reusable workflow ([fd273dc](https://github.com/somaz94/go-changelog-action/commit/fd273dc5b49083ae79a4ef26885e67cdfcc975ed))
+
+### Contributors
+
+- somaz
+
+<br/>
+
+## [v1.0.8](https://github.com/somaz94/go-changelog-action/compare/v1.0.7...v1.0.8) (2026-06-02)
+
+### Code Refactoring
+
+- harden path containment, output close, and git stderr ([3040d5b](https://github.com/somaz94/go-changelog-action/commit/3040d5b6df8acc7a4c1a03e5fc96eeff8d30db8b))
 
 ### Documentation
 
@@ -13,6 +78,11 @@ All notable changes to this project will be documented in this file.
 - **deps:** bump dependabot/fetch-metadata from 2 to 3 ([362575f](https://github.com/somaz94/go-changelog-action/commit/362575f8a61d3beadcc9fce7feb3820a297c375d))
 - **deps:** bump actions/github-script from 8 to 9 ([71b0085](https://github.com/somaz94/go-changelog-action/commit/71b0085cbce894d5f0c8ba81be6cc104d4387ee3))
 - **deps:** bump softprops/action-gh-release from 2 to 3 ([85864ea](https://github.com/somaz94/go-changelog-action/commit/85864ea0baf0ef083846743b7749d29dc15af26e))
+
+### Continuous Integration
+
+- add concurrency guards to recurring workflows ([02addc0](https://github.com/somaz94/go-changelog-action/commit/02addc051c03e83fc751e8b92fa78e4a27e48e6f))
+- use go-docker-action-ci-action@v1 (replace inline prelude) ([30b6f39](https://github.com/somaz94/go-changelog-action/commit/30b6f390c3aaa019d1e7670d548f52f6aab7ecf9))
 
 ### Chores
 

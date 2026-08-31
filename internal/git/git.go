@@ -31,12 +31,19 @@ type Tag struct {
 	Date time.Time
 }
 
-// RunCommand executes a git command and returns its output.
+// RunCommand executes a git command with a hard DefaultTimeout bound.
 // This is a package-level variable so tests can override it.
+// It intentionally derives its own context (not caller-threaded): all callers
+// are local read-only git ops, so SIGTERM propagation into subprocesses is not
+// worth the test-seam churn. Revisit if network git ops (fetch/clone/push) are added.
 var RunCommand = func(args ...string) ([]byte, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), DefaultTimeout)
 	defer cancel()
-	return exec.CommandContext(ctx, "git", args...).Output()
+	out, err := exec.CommandContext(ctx, "git", args...).Output()
+	if ee, ok := err.(*exec.ExitError); ok && len(ee.Stderr) > 0 {
+		return out, fmt.Errorf("%w: %s", err, strings.TrimSpace(string(ee.Stderr)))
+	}
+	return out, err
 }
 
 // commitFormat uses SOH (\x01) as field separator and NUL (\x00) as record separator.
